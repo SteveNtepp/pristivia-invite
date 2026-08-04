@@ -332,7 +332,7 @@
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center">
                 <div class="w-16 h-16 rounded-2xl bg-[#EBE8E1] shadow-md mb-4 border border-gray-300"></div>
                 <h3 class="font-playfair font-bold text-lg text-bantou-dark">Ivoire</h3>
-                <p class="text-xs text-gray-500 font-light mt-1">La pureté, le respect est l’union</p>
+                <p class="text-xs text-gray-500 font-light mt-1">La pureté, le respect et l’union</p>
             </div>
             <!-- Vert -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center">
@@ -547,6 +547,43 @@
         </div>
     </section>
 
+    <!-- Section Boutique Pagne -->
+    <section id="boutique" class="py-24 px-6 bg-bantou-ivory">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Boutique du Jour J</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Restez à l'heure dans la tradition</h2>
+                <p class="text-gray-600 font-light mt-4">
+                    Complétez votre tenue avec notre pagne officiel du mariage. Un tissu élégant aux couleurs de notre union, pour briller de la même parure que nous.
+                </p>
+                <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm flex flex-col md:flex-row" data-aos="fade-up">
+                <div class="md:w-1/2 h-72 md:h-auto bg-cover bg-top" style="background-image: url('assets/pagne01.png')"></div>
+                <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown">Tissu officiel du mariage</span>
+                        <h3 class="font-playfair text-2xl md:text-3xl font-bold text-bantou-dark mt-2 mb-3">Pagum &amp; Papillon</h3>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-6">
+                            Un pagne soyeux façonné pour ce jour unique. Harmonie entre nos couleurs bantoues et pratique à porter pour toutes et tous. Faites le vôtre et rayonnez à nos côtés.
+                        </p>
+                        <div class="flex items-baseline gap-3 mb-2">
+                            <span class="font-playfair text-3xl font-bold text-bantou-brown">5 000 Fcfa</span>
+                            <span class="text-xs font-medium text-gray-400 line-through">Prix invité*</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 font-light mb-6">*Un pagne de 6 yards — idéal pour homme, femme &amp; enfant.</p>
+                    </div>
+                    <a href="https://wa.me/237699461134?text=Bonjour%2C%20je%20souhaite%20commander%20le%20pagne%20officiel%20du%20mariage%20de%20Priscile%20%26%20Steve%20(%205%20000%20Fcfa%20)."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-3 w-full bg-bantou-green hover:bg-bantou-dark text-white text-sm uppercase tracking-widest py-4 rounded-xl font-semibold transition shadow-lg hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Commander sur WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-bantou-dark text-white py-12 px-6 border-t border-white/10 text-center">
         <div class="max-w-4xl mx-auto space-y-4">
@@ -706,17 +743,27 @@
             }
         }
 
-        // Lecture automatique à l'ouverture du site
-        audio.play().then(() => setPlaying(true)).catch(e => {
-            console.log("Audio autoplay blocked by browser policy; will start on first interaction");
-        });
+        // Lecture automatique à l'ouverture du site (aucun clic requis)
+        function startMusic() {
+            if (isPlaying) return;
+            audio.play().then(() => {
+                setPlaying(true);
+            }).catch(() => {
+                // Le navigateur refuse le son automatique : on réessaiera sans
+                // exiger de clic, mais il reste bloqué tant que l'utilisateur n'a
+                // pas interagi (politique de sécurité du navigateur).
+            });
+        }
+        startMusic();
 
-        // Secours : démarrage de la musique au premier clic sur la page
-        document.body.addEventListener('click', function initAudio() {
-            if (!isPlaying) {
-                audio.play().then(() => setPlaying(true)).catch(e => {});
-            }
-        }, { once: true });
+        // Retenter automatiquement dès que la page est réellement chargée,
+        // puis à intervalles réguliers et aux principales interactions passives
+        // (défilement / survol) pour maximiser les chances sans exiger de clic.
+        window.addEventListener('load', startMusic);
+        audio.addEventListener('canplaythrough', startMusic);
+        document.addEventListener('scroll', startMusic, { passive: true });
+        document.addEventListener('mouseover', startMusic, { passive: true });
+        window.addEventListener('touchstart', startMusic, { passive: true });
 
         // Modal Wishlist
         function openGiftModal(itemTitle) {
