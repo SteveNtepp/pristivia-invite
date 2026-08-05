@@ -93,6 +93,11 @@
                 opacity: 0;
             }
         }
+        /* Bouton de sélection de langue actif */
+        .lang-btn.active {
+            background: #E3B778;
+            color: #1C1917;
+        }
         /* Fleurs flottantes */
         #flowers {
             position: fixed;
@@ -135,28 +140,34 @@
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="#" class="font-playfair text-xl tracking-wider text-[#E3B778]">P &amp; S</a>
             <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-light">
-                <a href="#hero" class="hover:text-[#E3B778] transition">Accueil</a>
-                <a href="#famille" class="hover:text-[#E3B778] transition">Familles</a>
-                <a href="#histoire" class="hover:text-[#E3B778] transition">Notre Histoire</a>
-                <a href="#dresscode" class="hover:text-[#E3B778] transition">Dress Code</a>
-                <a href="#programme" class="hover:text-[#E3B778] transition">Programme</a>
-                <a href="#wishlist" class="hover:text-[#E3B778] transition">Wishlist</a>
-                <a href="#reservation" class="hover:text-[#E3B778] transition">RSVP</a>
+                <a href="#hero" class="hover:text-[#E3B778] transition" data-i18n="nav.home">Accueil</a>
+                <a href="#famille" class="hover:text-[#E3B778] transition" data-i18n="nav.families">Familles</a>
+                <a href="#histoire" class="hover:text-[#E3B778] transition" data-i18n="nav.story">Notre Histoire</a>
+                <a href="#dresscode" class="hover:text-[#E3B778] transition" data-i18n="nav.dresscode">Dress Code</a>
+                <a href="#programme" class="hover:text-[#E3B778] transition" data-i18n="nav.programme">Programme</a>
+                <a href="#wishlist" class="hover:text-[#E3B778] transition" data-i18n="nav.wishlist">Wishlist</a>
+                <a href="#reservation" class="hover:text-[#E3B778] transition" data-i18n="nav.rsvp">RSVP</a>
             </nav>
             <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
+        <div class="fixed top-4 right-4 md:right-8 z-50">
+            <div class="flex items-center bg-white/10 backdrop-blur-md border border-white/25 rounded-full overflow-hidden text-xs font-bold">
+                <button data-lang="fr" class="lang-btn px-3 py-1.5 text-white transition">FR</button>
+                <button data-lang="en" class="lang-btn px-3 py-1.5 text-white transition">EN</button>
+            </div>
+        </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-bantou-dark border-t border-white/10 py-4 px-6 shadow-xl">
             <div class="flex flex-col space-y-4 text-center">
-                <a href="#hero" class="mobile-link hover:text-[#E3B778] transition">Accueil</a>
-                <a href="#famille" class="mobile-link hover:text-[#E3B778] transition">Familles</a>
-                <a href="#histoire" class="mobile-link hover:text-[#E3B778] transition">Notre Histoire</a>
-                <a href="#dresscode" class="mobile-link hover:text-[#E3B778] transition">Dress Code</a>
-                <a href="#programme" class="mobile-link hover:text-[#E3B778] transition">Programme</a>
-                <a href="#wishlist" class="mobile-link hover:text-[#E3B778] transition">Wishlist</a>
-                <a href="#reservation" class="mobile-link hover:text-[#E3B778] transition">RSVP</a>
+                <a href="#hero" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.home">Accueil</a>
+                <a href="#famille" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.families">Familles</a>
+                <a href="#histoire" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.story">Notre Histoire</a>
+                <a href="#dresscode" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.dresscode">Dress Code</a>
+                <a href="#programme" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.programme">Programme</a>
+                <a href="#wishlist" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.wishlist">Wishlist</a>
+                <a href="#reservation" class="mobile-link hover:text-[#E3B778] transition" data-i18n="nav.rsvp">RSVP</a>
             </div>
         </div>
     </header>
@@ -167,12 +178,12 @@
         <div class="absolute inset-0 bg-gradient-to-t from-bantou-dark via-bantou-dark/50 to-bantou-dark/40 z-0"></div>
 
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
-            <span class="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-[#E3B778] mb-4 font-semibold">Mariage Civil</span>
-            <p class="text-lg md:text-xl font-light tracking-wide mb-2 text-gray-300">Vous êtes conviés au mariage de</p>
+            <span class="inline-block uppercase tracking-[0.3em] text-xs md:text-sm text-[#E3B778] mb-4 font-semibold" data-i18n="hero.badge">Mariage Civil</span>
+            <p class="text-lg md:text-xl font-light tracking-wide mb-2 text-gray-300" data-i18n="hero.subtitle">Vous êtes conviés au mariage de</p>
             <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white">
                 Priscile <span class="font-light italic text-[#E3B778]">&amp;</span> Steve
             </h1>
-            <p class="text-base md:text-lg font-light tracking-widest uppercase mb-8 text-gray-300">
+            <p class="text-base md:text-lg font-light tracking-widest uppercase mb-8 text-gray-300" data-i18n="hero.date">
                 10 Octobre 2026 à Douala, Cameroun
             </p>
             
@@ -180,23 +191,23 @@
             <div id="countdown" class="grid grid-cols-4 gap-3 max-w-md mx-auto mb-10 text-center">
                 <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
                     <span id="days" class="block font-playfair text-2xl md:text-3xl font-bold text-[#E3B778]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-gray-300">Jours</span>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-300" data-i18n="hero.countdown.days">Jours</span>
                 </div>
                 <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
                     <span id="hours" class="block font-playfair text-2xl md:text-3xl font-bold text-[#E3B778]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-gray-300">Heures</span>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-300" data-i18n="hero.countdown.hours">Heures</span>
                 </div>
                 <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
                     <span id="minutes" class="block font-playfair text-2xl md:text-3xl font-bold text-[#E3B778]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-gray-300">Minutes</span>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-300" data-i18n="hero.countdown.minutes">Minutes</span>
                 </div>
                 <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
                     <span id="seconds" class="block font-playfair text-2xl md:text-3xl font-bold text-[#E3B778]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-gray-300">Secondes</span>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-300" data-i18n="hero.countdown.seconds">Secondes</span>
                 </div>
             </div>
 
-            <a href="#programme" class="inline-block bg-[#6B705C] hover:bg-[#585c4c] text-white font-medium uppercase tracking-widest text-xs px-8 py-4 rounded-full transition shadow-lg transform hover:-translate-y-0.5">
+            <a href="#programme" class="inline-block bg-[#6B705C] hover:bg-[#585c4c] text-white font-medium uppercase tracking-widest text-xs px-8 py-4 rounded-full transition shadow-lg transform hover:-translate-y-0.5" data-i18n="hero.cta">
                 Découvrir le programme
             </a>
         </div>
@@ -205,9 +216,9 @@
     <!-- Section Famille -->
     <section id="famille" class="py-24 px-6 max-w-6xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-            <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Unions &amp; Racines</span>
-            <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Deux familles, Une promesse</h2>
-            <p class="text-gray-600 font-light mt-4">Célébrer nos traditions et bénir notre avenir.</p>
+            <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="famille.badge">Unions &amp; Racines</span>
+            <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2" data-i18n="famille.title">Deux familles, Une promesse</h2>
+            <p class="text-gray-600 font-light mt-4" data-i18n="famille.subtitle">Célébrer nos traditions et bénir notre avenir.</p>
             <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
         </div>
 
@@ -218,11 +229,11 @@
                 <h3 class="font-playfair text-3xl font-bold text-bantou-dark mb-4 text-center md:text-left">Priscile</h3>
                 <div class="space-y-4 text-gray-700 font-light text-sm md:text-base">
                     <div>
-                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-brown mb-1">Fille de</span>
+                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-brown mb-1" data-i18n="famille.daughter">Fille de</span>
                         <p class="font-medium">YOMBEUN Jean <span class="text-gray-400">&amp;</span> PAYEP Julienne</p>
                     </div>
                     <div>
-                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-brown mb-1">Sœur de</span>
+                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-brown mb-1" data-i18n="famille.sister">Sœur de</span>
                         <ul class="space-y-1 text-gray-600">
                             <li>• NDJANTOU YOMBEUN Ébénézer</li>
                             <li>• NGASSEU YOMBEUN Merline Flore</li>
@@ -240,11 +251,11 @@
                 <h3 class="font-playfair text-3xl font-bold text-bantou-dark mb-4 text-center md:text-left">Steve</h3>
                 <div class="space-y-4 text-gray-700 font-light text-sm md:text-base">
                     <div>
-                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-khaki mb-1">Fils de</span>
+                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-khaki mb-1" data-i18n="famille.son">Fils de</span>
                         <p class="font-medium">NTEPP Joseph Gaspard <span class="text-gray-400">&amp;</span> NGO NGANA Marie</p>
                     </div>
                     <div>
-                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-khaki mb-1">Frère de</span>
+                        <span class="block font-bold uppercase text-xs tracking-wider text-bantou-khaki mb-1" data-i18n="famille.brother">Frère de</span>
                         <ul class="space-y-1 text-gray-600">
                             <li>• KANG Jacob-Valentin</li>
                             <li>• NGO NTEPP Rebecca-Glwadys</li>
@@ -256,7 +267,7 @@
             </div>
         </div>
 
-        <div class="text-center mt-12 font-playfair italic text-xl text-bantou-brown" data-aos="fade-up">
+        <div class="text-center mt-12 font-playfair italic text-xl text-bantou-brown" data-aos="fade-up" data-i18n="famille.quote">
             « Éduqués avec Amour. Unis par la destinée. »
         </div>
     </section>
@@ -265,17 +276,17 @@
     <section id="histoire" class="py-24 px-6" style="background-image: linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)), url('assets/motif-bg.jpeg'); background-size: cover; background-position: top;">
         <div class="max-w-5xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Parcours de vie</span>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Le début d'une vie à deux</h2>
+                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="histoire.badge">Parcours de vie</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2" data-i18n="histoire.title">Le début d'une vie à deux</h2>
                 <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16" data-aos="fade-up">
                 <div class="space-y-6 text-gray-700 font-light leading-relaxed text-base md:text-lg">
-                    <p>
+                    <p data-i18n="histoire.p1">
                         Il y a des rencontres qui marquent une existence. La nôtre a débuté comme une évidence, tissée de rires, de complicité et de projets partagés à Douala et à Dakar.
                     </p>
-                    <p>
+                    <p data-i18n="histoire.p2">
                         Aujourd'hui, entourés de nos familles et de nos amis les plus chers, nous sommes prêts à franchir la plus belle des étapes. Votre présence à nos côtés en ce 10 octobre 2026 sera le plus beau témoignage de votre affection.
                     </p>
                     <p class="font-playfair italic font-bold text-bantou-dark pt-2">
@@ -305,11 +316,11 @@
     <!-- Section Dress Code & Galerie -->
     <section id="dresscode" class="py-24 px-6 max-w-6xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-            <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Élégance, Racines &amp; Héritage</span>
-            <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Mariage Bantou</h2>
+            <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="dresscode.badge">Élégance, Racines &amp; Héritage</span>
+            <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2" data-i18n="dresscode.title">Mariage Bantou</h2>
             <p class="text-gray-600 font-light mt-4 leading-relaxed">
-                Pour sublimer cette journée mémorable à nos côtés, nous vous invitons à respecter les couleurs de notre mariage.<br>
-                <strong class="text-bantou-dark">Tenues traditionnelles exigées à la réception.</strong>
+                <span data-i18n="dresscode.intro">Pour sublimer cette journée mémorable à nos côtés, nous vous invitons à respecter les couleurs de notre mariage.</span><br>
+                <strong class="text-bantou-dark" data-i18n="dresscode.traditional">Tenues traditionnelles exigées à la réception.</strong>
             </p>
             <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
         </div>
@@ -319,26 +330,26 @@
             <!-- Marron -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center">
                 <div class="w-16 h-16 rounded-2xl bg-[#5C4033] shadow-md mb-4 border border-white/20"></div>
-                <h3 class="font-playfair font-bold text-lg text-bantou-dark">Marron</h3>
-                <p class="text-xs text-gray-500 font-light mt-1">La terre, nos racines, la stabilité</p>
+                <h3 class="font-playfair font-bold text-lg text-bantou-dark" data-i18n="dresscode.brown">Marron</h3>
+                <p class="text-xs text-gray-500 font-light mt-1" data-i18n="dresscode.brown.desc">La terre, nos racines, la stabilité</p>
             </div>
             <!-- Kaki -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center">
                 <div class="w-16 h-16 rounded-2xl bg-[#6B705C] shadow-md mb-4 border border-white/20"></div>
-                <h3 class="font-playfair font-bold text-lg text-bantou-dark">Kaki</h3>
-                <p class="text-xs text-gray-500 font-light mt-1">La nature, la force et l’humilité</p>
+                <h3 class="font-playfair font-bold text-lg text-bantou-dark" data-i18n="dresscode.khaki">Kaki</h3>
+                <p class="text-xs text-gray-500 font-light mt-1" data-i18n="dresscode.khaki.desc">La nature, la force et l’humilité</p>
             </div>
             <!-- Ivoire -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center">
                 <div class="w-16 h-16 rounded-2xl bg-[#EBE8E1] shadow-md mb-4 border border-gray-300"></div>
-                <h3 class="font-playfair font-bold text-lg text-bantou-dark">Ivoire</h3>
-                <p class="text-xs text-gray-500 font-light mt-1">La pureté, le respect et l’union</p>
+                <h3 class="font-playfair font-bold text-lg text-bantou-dark" data-i18n="dresscode.ivory">Ivoire</h3>
+                <p class="text-xs text-gray-500 font-light mt-1" data-i18n="dresscode.ivory.desc">La pureté, le respect et l’union</p>
             </div>
             <!-- Vert -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center flex flex-col items-center">
                 <div class="w-16 h-16 rounded-2xl bg-[#386641] shadow-md mb-4 border border-white/20"></div>
-                <h3 class="font-playfair font-bold text-lg text-bantou-dark">Vert</h3>
-                <p class="text-xs text-gray-500 font-light mt-1">La vie, la prospérité et l’espérance</p>
+                <h3 class="font-playfair font-bold text-lg text-bantou-dark" data-i18n="dresscode.green">Vert</h3>
+                <p class="text-xs text-gray-500 font-light mt-1" data-i18n="dresscode.green.desc">La vie, la prospérité et l’espérance</p>
             </div>
         </div>
 
@@ -382,8 +393,8 @@
     <section id="programme" class="py-24 px-6" style="background-image: linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)), url('assets/motif-bg.jpeg'); background-size: cover; background-position: top;">
         <div class="max-w-5xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Déroulement du Jour J</span>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Le Programme</h2>
+                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="programme.badge">Déroulement du Jour J</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2" data-i18n="programme.title">Le Programme</h2>
                 <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
             </div>
 
@@ -396,15 +407,15 @@
                             <i class="fa-solid fa-ring"></i>
                         </div>
                         <div>
-                            <h3 class="font-playfair text-2xl font-bold text-bantou-dark">Cérémonie Civile</h3>
-                            <p class="text-bantou-brown font-medium text-sm">Mairie de Bonamoussadi</p>
+                            <h3 class="font-playfair text-2xl font-bold text-bantou-dark" data-i18n="programme.mairie.title">Cérémonie Civile</h3>
+                            <p class="text-bantou-brown font-medium text-sm" data-i18n="programme.mairie.place">Mairie de Bonamoussadi</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 font-light mb-6">
+                    <p class="text-gray-600 font-light mb-6" data-i18n="programme.mairie.desc">
                         Un moment solennel et émouvant où nous prononcerons le "oui" officiel devant la loi et nos proches.
                     </p>
                     <a href="https://maps.app.goo.gl/kyveUL1feZjetqPdA" target="_blank" class="inline-flex items-center text-xs uppercase tracking-widest text-bantou-dark font-bold hover:text-bantou-brown transition">
-                        <i class="fa-solid fa-location-dot mr-2 text-bantou-brown"></i> Voir l'itinéraire Mairie <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                        <i class="fa-solid fa-location-dot mr-2 text-bantou-brown"></i> <span data-i18n="programme.mairie.route">Voir l'itinéraire Mairie</span> <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
                     </a>
                 </div>
 
@@ -416,15 +427,15 @@
                             <i class="fa-solid fa-champagne-glasses"></i>
                         </div>
                         <div>
-                            <h3 class="font-playfair text-2xl font-bold text-bantou-dark">Réception &amp; Festivités</h3>
-                            <p class="text-bantou-brown font-medium text-sm">Restaurant Bantou, Bonamoussadi</p>
+                            <h3 class="font-playfair text-2xl font-bold text-bantou-dark" data-i18n="programme.reception.title">Réception &amp; Festivités</h3>
+                            <p class="text-bantou-brown font-medium text-sm" data-i18n="programme.reception.place">Restaurant Bantou, Bonamoussadi</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 font-light mb-6">
+                    <p class="text-gray-600 font-light mb-6" data-i18n="programme.reception.desc">
                         Place aux festivités ! Dîner raffiné, musiques, rires et célébration dans une ambiance chaleureuse.
                     </p>
                     <a href="https://maps.app.goo.gl/ac2VX8vdwPVdqCb36" target="_blank" class="inline-flex items-center text-xs uppercase tracking-widest text-bantou-dark font-bold hover:text-bantou-brown transition">
-                        <i class="fa-solid fa-location-dot mr-2 text-bantou-brown"></i> Voir l'itinéraire Restaurant <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                        <i class="fa-solid fa-location-dot mr-2 text-bantou-brown"></i> <span data-i18n="programme.reception.route">Voir l'itinéraire Restaurant</span> <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
                     </a>
                 </div>
             </div>
@@ -435,10 +446,10 @@
     <section id="wishlist" class="py-24 bg-bantou-ivory px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Liste de Mariage</span>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Notre Wishlist</h2>
+                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="wishlist.badge">Liste de Mariage</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2" data-i18n="wishlist.title">Notre Wishlist</h2>
                 <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
-                <p class="text-gray-600 font-light mt-4">
+                <p class="text-gray-600 font-light mt-4" data-i18n="wishlist.intro">
                     Votre présence est notre plus grand cadeau. Toutefois, si vous souhaitez nous gâter pour le début de notre vie à deux, voici quelques suggestions de contributions et d'attentions qui nous tiennent à cœur.
                 </p>
             </div>
@@ -449,13 +460,13 @@
                     <div>
                         <div class="h-48 bg-cover bg-top" style="background-image: url('assets/wl01.jpeg')"></div>
                         <div class="p-6">
-                            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown">Planing familial</span>
-                            <h3 class="font-playfair text-xl font-bold text-bantou-dark mt-1 mb-2">Fonds Maternité</h3>
-                            <p class="text-gray-600 font-light text-sm">Une contribution libre pour nous aider à préparer l’arrivée de votre futur.e nièce, neveux, petite fille, petit-fils.</p>
+                            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown" data-i18n="wishlist.gift1.tag">Planing familial</span>
+                            <h3 class="font-playfair text-xl font-bold text-bantou-dark mt-1 mb-2" data-i18n="wishlist.gift1.title">Fonds Maternité</h3>
+                            <p class="text-gray-600 font-light text-sm" data-i18n="wishlist.gift1.desc">Une contribution libre pour nous aider à préparer l’arrivée de votre futur.e nièce, neveux, petite fille, petit-fils.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <button onclick="openGiftModal('Fonds Maternité')" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition">
+                        <button onclick="openGiftModal('wishlist.gift1.title')" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition" data-i18n="wishlist.give">
                             Offrir / Contribuer
                         </button>
                     </div>
@@ -466,13 +477,13 @@
                     <div>
                         <div class="h-48 bg-cover bg-top" style="background-image: url('assets/wl02.jpeg')"></div>
                         <div class="p-6">
-                            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown">Projet Avenir</span>
-                            <h3 class="font-playfair text-xl font-bold text-bantou-dark mt-1 mb-2">Fonds d'Installation</h3>
-                            <p class="text-gray-600 font-light text-sm">Une contribution libre pour nous aider à concrétiser nos projets futurs et l’aménagement de notre maison.</p>
+                            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown" data-i18n="wishlist.gift2.tag">Projet Avenir</span>
+                            <h3 class="font-playfair text-xl font-bold text-bantou-dark mt-1 mb-2" data-i18n="wishlist.gift2.title">Fonds d'Installation</h3>
+                            <p class="text-gray-600 font-light text-sm" data-i18n="wishlist.gift2.desc">Une contribution libre pour nous aider à concrétiser nos projets futurs et l’aménagement de notre maison.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <button onclick="openGiftModal('Fonds d\'Installation')" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition">
+                        <button onclick="openGiftModal('wishlist.gift2.title')" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition" data-i18n="wishlist.give">
                             Offrir / Contribuer
                         </button>
                     </div>
@@ -483,13 +494,13 @@
                     <div>
                         <div class="h-48 bg-cover bg-top" style="background-image: url('assets/wl03.jpeg')"></div>
                         <div class="p-6">
-                            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown">Équipement maison</span>
-                            <h3 class="font-playfair text-xl font-bold text-bantou-dark mt-1 mb-2">Cuisine &amp; Électroménager</h3>
-                            <p class="text-gray-600 font-light text-sm">Une contribution libre pour nous aider à mitonner de bons petits plats et vous recevoir dans notre nouveau foyer.</p>
+                            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown" data-i18n="wishlist.gift3.tag">Équipement maison</span>
+                            <h3 class="font-playfair text-xl font-bold text-bantou-dark mt-1 mb-2" data-i18n="wishlist.gift3.title">Cuisine &amp; Électroménager</h3>
+                            <p class="text-gray-600 font-light text-sm" data-i18n="wishlist.gift3.desc">Une contribution libre pour nous aider à mitonner de bons petits plats et vous recevoir dans notre nouveau foyer.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <button onclick="openGiftModal('Cuisine & Électroménager')" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition">
+                        <button onclick="openGiftModal('wishlist.gift3.title')" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition" data-i18n="wishlist.give">
                             Offrir / Contribuer
                         </button>
                     </div>
@@ -502,37 +513,37 @@
     <section id="reservation" class="py-24 px-6 relative" style="background-image: linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.50)), url('assets/motif-bg.jpeg'); background-size: cover; background-position: top;">
         <div class="max-w-2xl mx-auto bg-bantou-ivory rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200" data-aos="fade-up">
             <div class="text-center mb-10">
-                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Confirmation de présence</span>
+                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="rsvp.badge">Confirmation de présence</span>
                 <h2 class="font-playfair text-3xl md:text-4xl font-bold text-bantou-dark mt-2">RSVP</h2>
-                <p class="text-gray-600 font-light text-sm mt-2">Veuillez nous confirmer votre présence avant le 15 Septembre 2026.</p>
+                <p class="text-gray-600 font-light text-sm mt-2" data-i18n="rsvp.subtitle">Veuillez nous confirmer votre présence avant le 15 Septembre 2026.</p>
             </div>
 
             <form id="rsvp-form" class="space-y-6" onsubmit="handleRSVP(event)">
                 <div>
-                    <label class="block text-xs uppercase tracking-wider font-bold text-bantou-dark mb-2">Nom Complet</label>
-                    <input type="text" required class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-bantou-dark focus:outline-none focus:border-bantou-brown transition" placeholder="Ex: Jean Dupont">
+                    <label class="block text-xs uppercase tracking-wider font-bold text-bantou-dark mb-2" data-i18n="rsvp.name">Nom Complet</label>
+                    <input type="text" required class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-bantou-dark focus:outline-none focus:border-bantou-brown transition" data-i18n-placeholder="placeholder.name" placeholder="Ex: Jean Dupont">
                 </div>
                 
                 <div>
-                    <label class="block text-xs uppercase tracking-wider font-bold text-bantou-dark mb-2">Téléphone</label>
-                    <input type="tel" required class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-bantou-dark focus:outline-none focus:border-bantou-brown transition" placeholder="+237 6XX XXX XXX">
+                    <label class="block text-xs uppercase tracking-wider font-bold text-bantou-dark mb-2" data-i18n="rsvp.phone">Téléphone</label>
+                    <input type="tel" required class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-bantou-dark focus:outline-none focus:border-bantou-brown transition" data-i18n-placeholder="placeholder.phone" placeholder="+237 6XX XXX XXX">
                 </div>
 
                 <div>
-                    <label class="block text-xs uppercase tracking-wider font-bold text-bantou-dark mb-2">Présence</label>
+                    <label class="block text-xs uppercase tracking-wider font-bold text-bantou-dark mb-2" data-i18n="rsvp.presence">Présence</label>
                     <div class="grid grid-cols-2 gap-4">
                         <label class="flex items-center space-x-3 bg-white p-4 rounded-xl border border-gray-300 cursor-pointer hover:border-bantou-brown transition">
                             <input type="radio" name="presence" value="present" checked class="text-bantou-brown focus:ring-bantou-brown">
-                            <span class="text-sm font-medium text-bantou-dark">Sera présent(e)</span>
+                            <span class="text-sm font-medium text-bantou-dark" data-i18n="rsvp.present">Sera présent(e)</span>
                         </label>
                         <label class="flex items-center space-x-3 bg-white p-4 rounded-xl border border-gray-300 cursor-pointer hover:border-bantou-brown transition">
                             <input type="radio" name="presence" value="absent" class="text-bantou-brown focus:ring-bantou-brown">
-                            <span class="text-sm font-medium text-bantou-dark">Sera absent(e)</span>
+                            <span class="text-sm font-medium text-bantou-dark" data-i18n="rsvp.absent">Sera absent(e)</span>
                         </label>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-bantou-brown hover:bg-[#4a3328] text-white font-medium uppercase tracking-widest text-xs py-4 rounded-xl transition shadow-lg">
+                <button type="submit" class="w-full bg-bantou-brown hover:bg-[#4a3328] text-white font-medium uppercase tracking-widest text-xs py-4 rounded-xl transition shadow-lg" data-i18n="rsvp.submit">
                     Envoyer ma réponse
                 </button>
             </form>
@@ -541,8 +552,8 @@
                 <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                     <i class="fa-solid fa-check"></i>
                 </div>
-                <h3 class="font-playfair text-2xl font-bold text-bantou-dark mb-2">Merci pour votre réponse !</h3>
-                <p class="text-gray-600 font-light">Votre confirmation a bien été enregistrée. Nous avons hâte de célébrer avec vous.</p>
+                <h3 class="font-playfair text-2xl font-bold text-bantou-dark mb-2" data-i18n="rsvp.success.title">Merci pour votre réponse !</h3>
+                <p class="text-gray-600 font-light" data-i18n="rsvp.success.desc">Votre confirmation a bien été enregistrée. Nous avons hâte de célébrer avec vous.</p>
             </div>
         </div>
     </section>
@@ -551,9 +562,9 @@
     <section id="boutique" class="py-24 px-6 bg-bantou-ivory">
         <div class="max-w-4xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold">Boutique du Jour J</span>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2">Restez à l'heure dans la tradition</h2>
-                <p class="text-gray-600 font-light mt-4">
+                <span class="text-bantou-brown uppercase tracking-[0.2em] text-xs font-bold" data-i18n="boutique.badge">Boutique du Jour J</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-bantou-dark mt-2" data-i18n="boutique.title">Restez à l'heure dans la tradition</h2>
+                <p class="text-gray-600 font-light mt-4" data-i18n="boutique.intro">
                     Complétez votre tenue avec notre pagne officiel du mariage. Un tissu élégant aux couleurs de notre union, pour briller de la même parure que nous.
                 </p>
                 <div class="w-16 h-1 bg-bantou-brown mx-auto mt-4"></div>
@@ -563,21 +574,21 @@
                 <div class="md:w-1/2 h-72 md:h-auto bg-cover bg-top" style="background-image: url('assets/pagne01.png')"></div>
                 <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown">Tissu officiel du mariage</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown" data-i18n="boutique.tag">Tissu officiel du mariage</span>
                         <h3 class="font-playfair text-2xl md:text-3xl font-bold text-bantou-dark mt-2 mb-3">Pagum &amp; Papillon</h3>
-                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-6">
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-6" data-i18n="boutique.desc">
                             Un pagne soyeux façonné pour ce jour unique. Harmonie entre nos couleurs bantoues et pratique à porter pour toutes et tous. Faites le vôtre et rayonnez à nos côtés.
                         </p>
                         <div class="flex items-baseline gap-3 mb-2">
                             <span class="font-playfair text-3xl font-bold text-bantou-brown">5 000 Fcfa</span>
-                            <span class="text-xs font-medium text-gray-400 line-through">Prix invité*</span>
+                            <span class="text-xs font-medium text-gray-400 line-through" data-i18n="boutique.guestprice">Prix invité*</span>
                         </div>
-                        <p class="text-[11px] text-gray-400 font-light mb-6">*Un pagne de 6 yards — idéal pour homme, femme &amp; enfant.</p>
+                        <p class="text-[11px] text-gray-400 font-light mb-6" data-i18n="boutique.note">*Un pagne de 6 yards — idéal pour homme, femme &amp; enfant.</p>
                     </div>
-                    <a href="https://wa.me/237699461134?text=Bonjour%2C%20je%20souhaite%20commander%20le%20pagne%20officiel%20du%20mariage%20de%20Priscile%20%26%20Steve%20(%205%20000%20Fcfa%20)."
+                    <a id="whatsapp-link" href="https://wa.me/237699461134?text=Bonjour%2C%20je%20souhaite%20commander%20le%20pagne%20officiel%20du%20mariage%20de%20Priscile%20%26%20Steve%20(%205%20000%20Fcfa%20)."
                        target="_blank" rel="noopener"
                        class="inline-flex items-center justify-center gap-3 w-full bg-bantou-green hover:bg-bantou-dark text-white text-sm uppercase tracking-widest py-4 rounded-xl font-semibold transition shadow-lg hover:-translate-y-0.5">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Commander sur WhatsApp
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span data-i18n="boutique.order">Commander sur WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -588,8 +599,8 @@
     <footer class="bg-bantou-dark text-white py-12 px-6 border-t border-white/10 text-center">
         <div class="max-w-4xl mx-auto space-y-4">
             <span class="font-playfair text-2xl text-[#E3B778]">Priscile &amp; Steve</span>
-            <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-light">10 Octobre 2026 • Douala, Cameroun</p>
-            <p class="text-xs text-gray-500 pt-6">© 2026 Tous droits réservés • Conçu avec amour par Smix</p>
+            <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-light" data-i18n="footer.date">10 Octobre 2026 • Douala, Cameroun</p>
+            <p class="text-xs text-gray-500 pt-6" data-i18n="footer.copyright">© 2026 Tous droits réservés • Conçu avec amour par Smix</p>
         </div>
     </footer>
 
@@ -603,7 +614,7 @@
     <div class="fixed bottom-6 right-6 z-50">
         <button id="music-btn" onclick="toggleMusic()" class="bg-bantou-brown text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition duration-300 relative group">
             <i id="music-icon" class="fa-solid fa-music text-xl animate-pulse"></i>
-            <span class="absolute right-full mr-3 bg-bantou-dark text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-md pointer-events-none">
+            <span class="absolute right-full mr-3 bg-bantou-dark text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-md pointer-events-none" data-i18n="music.tooltip">
                 Musique d'ambiance
             </span>
         </button>
@@ -619,9 +630,9 @@
             <button onclick="closeGiftModal()" class="absolute top-4 right-4 text-gray-400 hover:text-bantou-dark text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown">Liste de Mariage</span>
-            <h3 id="modal-title" class="font-playfair text-2xl font-bold text-bantou-dark mt-1 mb-4">Contribution</h3>
-            <p class="text-gray-600 font-light text-sm mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-bantou-brown" data-i18n="modal.badge">Liste de Mariage</span>
+            <h3 id="modal-title" class="font-playfair text-2xl font-bold text-bantou-dark mt-1 mb-4" data-i18n="modal.title">Contribution</h3>
+            <p class="text-gray-600 font-light text-sm mb-6" data-i18n="modal.intro">
                 Pour participer à cette attention pour Priscile &amp; Steve, vous pouvez utiliser les coordonnées de transfert ci-dessous.
             </p>
             <div class="bg-bantou-ivory p-5 rounded-2xl mb-6 space-y-3 text-sm text-bantou-dark border border-gray-200">
@@ -634,11 +645,11 @@
                     <span class="font-mono text-bantou-brown font-bold">699461134</span>
                 </div>
                 <div class="flex justify-between pt-1">
-                    <span class="font-semibold">Nom :</span>
+                    <span class="font-semibold" data-i18n="modal.name">Nom :</span>
                     <span class="font-mono font-bold">SAMOU YOMBEUN Priscile</span>
                 </div>
             </div>
-            <button onclick="closeGiftModal()" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition">
+            <button onclick="closeGiftModal()" class="w-full bg-bantou-dark hover:bg-black text-white text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition" data-i18n="modal.close">
                 Fermer
             </button>
         </div>
@@ -647,6 +658,268 @@
     <!-- Script JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // ============ Système de langue (FR par défaut / EN) ============
+        const translations = {
+            fr: {
+                "title": "Mariage de Priscile & Steve - 10 Octobre 2026",
+                "nav.home": "Accueil",
+                "nav.families": "Familles",
+                "nav.story": "Notre Histoire",
+                "nav.dresscode": "Dress Code",
+                "nav.programme": "Programme",
+                "nav.wishlist": "Wishlist",
+                "nav.rsvp": "RSVP",
+
+                "hero.badge": "Mariage Civil",
+                "hero.subtitle": "Vous êtes conviés au mariage de",
+                "hero.date": "10 Octobre 2026 à Douala, Cameroun",
+                "hero.countdown.days": "Jours",
+                "hero.countdown.hours": "Heures",
+                "hero.countdown.minutes": "Minutes",
+                "hero.countdown.seconds": "Secondes",
+                "hero.cta": "Découvrir le programme",
+
+                "famille.badge": "Unions & Racines",
+                "famille.title": "Deux familles, Une promesse",
+                "famille.subtitle": "Célébrer nos traditions et bénir notre avenir.",
+                "famille.daughter": "Fille de",
+                "famille.sister": "Sœur de",
+                "famille.son": "Fils de",
+                "famille.brother": "Frère de",
+                "famille.quote": "« Éduqués avec Amour. Unis par la destinée. »",
+
+                "histoire.badge": "Parcours de vie",
+                "histoire.title": "Le début d'une vie à deux",
+                "histoire.p1": "Il y a des rencontres qui marquent une existence. La nôtre a débuté comme une évidence, tissée de rires, de complicité et de projets partagés à Douala et à Dakar.",
+                "histoire.p2": "Aujourd'hui, entourés de nos familles et de nos amis les plus chers, nous sommes prêts à franchir la plus belle des étapes. Votre présence à nos côtés en ce 10 octobre 2026 sera le plus beau témoignage de votre affection.",
+
+                "dresscode.badge": "Élégance, Racines & Héritage",
+                "dresscode.title": "Mariage Bantou",
+                "dresscode.intro": "Pour sublimer cette journée mémorable à nos côtés, nous vous invitons à respecter les couleurs de notre mariage.",
+                "dresscode.traditional": "Tenues traditionnelles exigées à la réception.",
+                "dresscode.brown": "Marron",
+                "dresscode.brown.desc": "La terre, nos racines, la stabilité",
+                "dresscode.khaki": "Kaki",
+                "dresscode.khaki.desc": "La nature, la force et l’humilité",
+                "dresscode.ivory": "Ivoire",
+                "dresscode.ivory.desc": "La pureté, le respect et l’union",
+                "dresscode.green": "Vert",
+                "dresscode.green.desc": "La vie, la prospérité et l’espérance",
+
+                "programme.badge": "Déroulement du Jour J",
+                "programme.title": "Le Programme",
+                "programme.mairie.title": "Cérémonie Civile",
+                "programme.mairie.place": "Mairie de Bonamoussadi",
+                "programme.mairie.desc": "Un moment solennel et émouvant où nous prononcerons le \"oui\" officiel devant la loi et nos proches.",
+                "programme.mairie.route": "Voir l'itinéraire Mairie",
+                "programme.reception.title": "Réception & Festivités",
+                "programme.reception.place": "Restaurant Bantou, Bonamoussadi",
+                "programme.reception.desc": "Place aux festivités ! Dîner raffiné, musiques, rires et célébration dans une ambiance chaleureuse.",
+                "programme.reception.route": "Voir l'itinéraire Restaurant",
+
+                "wishlist.badge": "Liste de Mariage",
+                "wishlist.title": "Notre Wishlist",
+                "wishlist.intro": "Votre présence est notre plus grand cadeau. Toutefois, si vous souhaitez nous gâter pour le début de notre vie à deux, voici quelques suggestions de contributions et d'attentions qui nous tiennent à cœur.",
+                "wishlist.gift1.tag": "Planing familial",
+                "wishlist.gift1.title": "Fonds Maternité",
+                "wishlist.gift1.desc": "Une contribution libre pour nous aider à préparer l’arrivée de votre futur.e nièce, neveux, petite fille, petit-fils.",
+                "wishlist.gift2.tag": "Projet Avenir",
+                "wishlist.gift2.title": "Fonds d'Installation",
+                "wishlist.gift2.desc": "Une contribution libre pour nous aider à concrétiser nos projets futurs et l’aménagement de notre maison.",
+                "wishlist.gift3.tag": "Équipement maison",
+                "wishlist.gift3.title": "Cuisine & Électroménager",
+                "wishlist.gift3.desc": "Une contribution libre pour nous aider à mitonner de bons petits plats et vous recevoir dans notre nouveau foyer.",
+                "wishlist.give": "Offrir / Contribuer",
+
+                "rsvp.badge": "Confirmation de présence",
+                "rsvp.subtitle": "Veuillez nous confirmer votre présence avant le 15 Septembre 2026.",
+                "rsvp.name": "Nom Complet",
+                "rsvp.phone": "Téléphone",
+                "rsvp.presence": "Présence",
+                "rsvp.present": "Sera présent(e)",
+                "rsvp.absent": "Sera absent(e)",
+                "rsvp.submit": "Envoyer ma réponse",
+                "rsvp.success.title": "Merci pour votre réponse !",
+                "rsvp.success.desc": "Votre confirmation a bien été enregistrée. Nous avons hâte de célébrer avec vous.",
+
+                "boutique.badge": "Boutique du Jour J",
+                "boutique.title": "Restez à l'heure dans la tradition",
+                "boutique.intro": "Complétez votre tenue avec notre pagne officiel du mariage. Un tissu élégant aux couleurs de notre union, pour briller de la même parure que nous.",
+                "boutique.tag": "Tissu officiel du mariage",
+                "boutique.desc": "Un pagne soyeux façonné pour ce jour unique. Harmonie entre nos couleurs bantoues et pratique à porter pour toutes et tous. Faites le vôtre et rayonnez à nos côtés.",
+                "boutique.guestprice": "Prix invité*",
+                "boutique.note": "*Un pagne de 6 yards — idéal pour homme, femme & enfant.",
+                "boutique.order": "Commander sur WhatsApp",
+
+                "footer.date": "10 Octobre 2026 • Douala, Cameroun",
+                "footer.copyright": "© 2026 Tous droits réservés • Conçu avec amour par Smix",
+
+                "music.tooltip": "Musique d'ambiance",
+
+                "modal.badge": "Liste de Mariage",
+                "modal.title": "Contribution",
+                "modal.intro": "Pour participer à cette attention pour Priscile & Steve, vous pouvez utiliser les coordonnées de transfert ci-dessous.",
+                "modal.name": "Nom :",
+                "modal.close": "Fermer",
+
+                "js.countdown.done": "Le grand jour est arrivé !",
+
+                "placeholder.name": "Ex: Jean Dupont",
+                "placeholder.phone": "+237 6XX XXX XXX",
+                "wa.message": "Bonjour, je souhaite commander le pagne officiel du mariage de Priscile & Steve (5 000 Fcfa)."
+            },
+            en: {
+                "title": "Wedding of Priscile & Steve - October 10, 2026",
+                "nav.home": "Home",
+                "nav.families": "Families",
+                "nav.story": "Our Story",
+                "nav.dresscode": "Dress Code",
+                "nav.programme": "Programme",
+                "nav.wishlist": "Wishlist",
+                "nav.rsvp": "RSVP",
+
+                "hero.badge": "Civil Wedding",
+                "hero.subtitle": "You are invited to the wedding of",
+                "hero.date": "October 10, 2026 in Douala, Cameroon",
+                "hero.countdown.days": "Days",
+                "hero.countdown.hours": "Hours",
+                "hero.countdown.minutes": "Minutes",
+                "hero.countdown.seconds": "Seconds",
+                "hero.cta": "Discover the programme",
+
+                "famille.badge": "Unions & Roots",
+                "famille.title": "Two families, One promise",
+                "famille.subtitle": "Celebrating our traditions and blessing our future.",
+                "famille.daughter": "Daughter of",
+                "famille.sister": "Sister of",
+                "famille.son": "Son of",
+                "famille.brother": "Brother of",
+                "famille.quote": "“Raised with Love. United by destiny.”",
+
+                "histoire.badge": "Life journey",
+                "histoire.title": "The beginning of a life together",
+                "histoire.p1": "Some encounters leave a mark on a lifetime. Ours began like an evidence, woven with laughter, complicity and shared projects in Douala and Dakar.",
+                "histoire.p2": "Today, surrounded by our dearest families and friends, we are ready to take the most beautiful step. Your presence by our side on this October 10, 2026 will be the finest testimony of your affection.",
+
+                "dresscode.badge": "Elegance, Roots & Heritage",
+                "dresscode.title": "Bantou Wedding",
+                "dresscode.intro": "To make this memorable day even more beautiful by our side, we invite you to respect the colors of our wedding.",
+                "dresscode.traditional": "Traditional outfits required at the reception.",
+                "dresscode.brown": "Brown",
+                "dresscode.brown.desc": "The earth, our roots, stability",
+                "dresscode.khaki": "Khaki",
+                "dresscode.khaki.desc": "Nature, strength and humility",
+                "dresscode.ivory": "Ivory",
+                "dresscode.ivory.desc": "Purity, respect and union",
+                "dresscode.green": "Green",
+                "dresscode.green.desc": "Life, prosperity and hope",
+
+                "programme.badge": "Wedding day schedule",
+                "programme.title": "The Programme",
+                "programme.mairie.title": "Civil Ceremony",
+                "programme.mairie.place": "Bonamoussadi City Hall",
+                "programme.mairie.desc": "A solemn and moving moment where we will say the official “yes” before the law and our loved ones.",
+                "programme.mairie.route": "View route to City Hall",
+                "programme.reception.title": "Reception & Festivities",
+                "programme.reception.place": "Restaurant Bantou, Bonamoussadi",
+                "programme.reception.desc": "Let the festivities begin! Refined dinner, music, laughter and celebration in a warm atmosphere.",
+                "programme.reception.route": "View route to Restaurant",
+
+                "wishlist.badge": "Wedding Registry",
+                "wishlist.title": "Our Wishlist",
+                "wishlist.intro": "Your presence is our greatest gift. However, if you would like to pamper us as we start our life together, here are a few suggestions of contributions and attentions that are close to our hearts.",
+                "wishlist.gift1.tag": "Family planning",
+                "wishlist.gift1.title": "Maternity Fund",
+                "wishlist.gift1.desc": "A free contribution to help us prepare for the arrival of your future niece, nephew, granddaughter, grandson.",
+                "wishlist.gift2.tag": "Future Project",
+                "wishlist.gift2.title": "Start-up Fund",
+                "wishlist.gift2.desc": "A free contribution to help us achieve our future projects and set up our home.",
+                "wishlist.gift3.tag": "Home equipment",
+                "wishlist.gift3.title": "Kitchen & Appliances",
+                "wishlist.gift3.desc": "A free contribution to help us cook delicious meals and welcome you into our new home.",
+                "wishlist.give": "Give / Contribute",
+
+                "rsvp.badge": "Attendance Confirmation",
+                "rsvp.subtitle": "Please confirm your attendance before September 15, 2026.",
+                "rsvp.name": "Full Name",
+                "rsvp.phone": "Phone",
+                "rsvp.presence": "Attendance",
+                "rsvp.present": "Will attend",
+                "rsvp.absent": "Will not attend",
+                "rsvp.submit": "Send my response",
+                "rsvp.success.title": "Thank you for your response!",
+                "rsvp.success.desc": "Your confirmation has been recorded. We can't wait to celebrate with you.",
+
+                "boutique.badge": "Wedding Day Shop",
+                "boutique.title": "Stay in step with tradition",
+                "boutique.intro": "Complete your outfit with our official wedding fabric. An elegant cloth in the colors of our union, to shine in the same attire as us.",
+                "boutique.tag": "Official wedding fabric",
+                "boutique.desc": "A silky fabric made for this unique day. A harmony of our Bantou colors that is practical to wear for everyone. Get yours and shine by our side.",
+                "boutique.guestprice": "Guest price*",
+                "boutique.note": "*A 6-yard fabric — ideal for men, women & children.",
+                "boutique.order": "Order on WhatsApp",
+
+                "footer.date": "October 10, 2026 • Douala, Cameroon",
+                "footer.copyright": "© 2026 All rights reserved • Designed with love by Smix",
+
+                "music.tooltip": "Ambiance music",
+
+                "modal.badge": "Wedding Registry",
+                "modal.title": "Contribution",
+                "modal.intro": "To take part in this gift for Priscile & Steve, you can use the transfer details below.",
+                "modal.name": "Name:",
+                "modal.close": "Close",
+
+                "js.countdown.done": "The big day has arrived!",
+
+                "placeholder.name": "e.g. John Doe",
+                "placeholder.phone": "+237 6XX XXX XXX",
+                "wa.message": "Hello, I would like to order the official wedding fabric for Priscile & Steve (5,000 Fcfa)."
+            }
+        };
+
+        let currentLang = localStorage.getItem('pristivia-lang') || 'fr';
+        if (!translations[currentLang]) currentLang = 'fr';
+
+        function t(key) {
+            return (translations[currentLang] && translations[currentLang][key]) || translations['fr'][key] || key;
+        }
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.setAttribute('lang', lang);
+            document.title = t('title');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                el.textContent = t(el.dataset.i18n);
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                el.setAttribute('placeholder', t(el.dataset.i18nPlaceholder));
+            });
+
+            if (currentGiftKey) {
+                document.getElementById('modal-title').textContent = t(currentGiftKey);
+            }
+
+            const waLink = document.getElementById('whatsapp-link');
+            if (waLink) {
+                waLink.setAttribute('href', 'https://wa.me/237699461134?text=' + encodeURIComponent(t('wa.message')));
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            localStorage.setItem('pristivia-lang', lang);
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+        });
+        let currentGiftKey = null;
+
+        applyLanguage(currentLang);
+
         AOS.init({
             once: true,
             duration: 800,
@@ -675,7 +948,7 @@
             const distance = weddingDate - now;
 
             if (distance < 0) {
-                document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-xl font-playfair font-bold text-[#E3B778]'>Le grand jour est arrivé !</div>";
+                document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-xl font-playfair font-bold text-[#E3B778]'>" + t('js.countdown.done') + "</div>";
                 return;
             }
 
@@ -766,12 +1039,14 @@
         window.addEventListener('touchstart', startMusic, { passive: true });
 
         // Modal Wishlist
-        function openGiftModal(itemTitle) {
-            document.getElementById('modal-title').innerText = itemTitle;
+        function openGiftModal(itemKey) {
+            currentGiftKey = itemKey;
+            document.getElementById('modal-title').textContent = t(itemKey);
             document.getElementById('gift-modal').classList.remove('hidden');
         }
 
         function closeGiftModal() {
+            currentGiftKey = null;
             document.getElementById('gift-modal').classList.add('hidden');
         }
 
@@ -823,7 +1098,7 @@
             const phone = form.querySelector('input[type="tel"]').value.trim();
             const presence = form.querySelector('input[name="presence"]:checked').value;
 
-            const presenceLabel = presence === 'present' ? 'Sera présent(e)' : 'Sera absent(e)';
+            const presenceLabel = presence === 'present' ? t('rsvp.present') : t('rsvp.absent');
 
             fetch('https://docs.google.com/forms/d/e/1FAIpQLScek4Vs_6LK8XdPU0Ffo4AwCtPO7OjMCpeJUnHxBkXOqFRtyg/formResponse', {
                 method: 'POST',
